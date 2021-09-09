@@ -18,8 +18,6 @@ training error란 훈련데이터를 이용해 모델을 피팅한 후 이 모�
 물론 training error도 매우 작고, test error 도 매우 작은 모델을 만들면 좋겠지만, 이건 편향-분산 트레이드 오프라는 특성때문에 현실적으로 불가능하다. 왜냐하면 편향이 커지면 분산이 작아지고, 편향이 작아지면 분산이 커지기 때문이다.  
 각 용어들의 정의를 하기 전에 우선 MSE(Mean Squared Error)r에 관해 이야기를 해보자. MSE는 연속형 Y 예측모델 성능평가에 사용되는 대표적인 지표들 중 하나이다. 이 MSE의 구성요소를 분해해보면 아래와 같다.
 
-[##_Image|kage@bipWKu/btreqJ6xlOi/3cUbiFCOCVpOOPF8AgwdRK/img.png|alignCenter|data-origin-width="616" data-origin-height="226" data-ke-mobilestyle="widthOrigin"|MSE 분해 (decomposition)||_##]
-
 우리는 훈련데이터가 아닌 unseen data에서도 일반화될 수 있는 최적의 예측모델을 찾는 것이 궁극적인 목표이다. 위 식에서 여기서 x는 training set과 test set을 포괄하는 dataset이다. 훈련데이터로 피팅한 f hat 모델에 x를 넣으면 예측값이 구해지며, y는 해당 데이터셋의 실제값을 의미한다.
 
 MSE는 편향^2과 분산, 그리고 sigma^2으로 구성되어있다. 먼저 편향은 쉽게 말해 예측값의 기대값과 '실제' 모델 간의 오차이다. 여기서 f(x)가 무엇인지 헷갈릴 수 있는데, f(x)는 우리가 결론적으로 알아내고자 하는 x와 y 간 관계를 나타내는 함수이며, f(x)우리는 결국 이 실제 관계와 가장 가까운 예측모델을 찾고자 하는 것이다.
@@ -42,11 +40,7 @@ y = F\*(X) + e , e ~ N(0, sigma^2) 와 같은 관계를 가정해보자.
 
 아마 위 그림도 많이 보셨을 것이다. 가운데 붉은 원은 실제값을 의미하고, 파란색 점들은 예측값들을 의미한다. Lo Variance-Low Bias 부분을 보면 예측값들이 실제값에 가깝고, 예측값들의 분산도 매우 작다. 하지만 두번 째 High Variance-Low Bias의 경우 예측값들이 실제값에 대체로 가깝지만, 예측값들 간의 분산이 크다. 세 번째 High Bias - Low Variance의 경우 예측값들이 실제값과 멀지만 예측값들 간의 분산은 매우 작다. 앞서 말했듯 Low Variance-Low Bias가 가장 이상적인 형태이지만 분산과 편향을 트레이드오프 관계에 있기 때문에 우리는 전체 에러 MSE가 가장 작아지는 지점의 모델을 찾아야 한다. 
 
-[##_Image|kage@bd2s79/btrevH1eScf/pzqnhkxtuUnKgvTfsLX5rK/img.png|alignCenter|data-origin-width="1217" data-origin-height="445" width="751" height="275" data-ke-mobilestyle="widthOrigin"|출처) 유튜브 StatQuest with Josh Starmer||_##]
-
 위 그림에서 파란색 점들은 training set을, 연두색 점들은 test set을 의미한다. 왼쪽 그래프의 경우 훈련데이터에 완전히 피팅된 형태인데, 이 모델을 이용해 test set의 예측을 진행하면 오른쪽 그래프와 같이 실제값과 예측값들 간 차이가 크다(파란색 점으로 예측한 값과 연두색 점으로 예측한 값들 간 분산이 크다). 즉, 이 모델은 bias는 작지만 variance가 크다. 이런 형태의 모델을 overfitting(과적합)된 모델이라고 한다. overfitting된 모델은 훈련데이터에서는 예측을 아주 잘하지만, 테스트데이터에서는 형편없는 예측을 할 가능성이 매우 크다. 
-
-[##_Image|kage@bX3y2l/btreAJcuF5A/1vrOjmu7swLLFkx6lJkUV0/img.png|alignCenter|data-origin-width="1209" data-origin-height="389" width="760" height="244" data-ke-mobilestyle="widthOrigin"|출처)&nbsp;유튜브 StatQuest with Josh Starmer||_##]
 
 반대로 위 그림의 왼쪽 그래프를 보면 linear한 모델이 피팅되었는데, 이는 실제 x와 y의 관계(파란 nonlinear한 선)를 잘 설명하지 못하고 있다. 이 때문에 예측값과 실제값의 차이가 크다, 즉 bias가 크다. 반면, 테스트데이터로 예측을 한 경우에는 예측값과 실제값의 차이가 훈련데이터로 한 경우와 크게 차이가 없다. 즉, variance가 작다. 이런 경우를 underfitting 되었다, 즉 실제 모델의 관계를 충분히 배우지 못했다고 한다. 
 
