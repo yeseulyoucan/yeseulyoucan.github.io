@@ -5,7 +5,7 @@ main:
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
    - title: "일기/생각기록"
-     url: /year-archive/
+     url: https://yeseulyoucan.github.io/year-archive/
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
