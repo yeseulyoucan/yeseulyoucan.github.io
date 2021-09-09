@@ -15,12 +15,12 @@
 minimal_mistakes_skin    : "contrast" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "en-US"
-title                    : "Joe's Blog"
+locale                   : "ko-KR"
+title                    : "조이의 데이터노트"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "조이/윤예슬"
-description              : "조이의 시선 블로그에 오신 것을 환영합니다."
+name                     : "조이(Joe)"
+description              : "배움을 사랑하는 비즈니스 데이터 분석가입니다:)"
 url                      : "https://yeseulyoucan.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
