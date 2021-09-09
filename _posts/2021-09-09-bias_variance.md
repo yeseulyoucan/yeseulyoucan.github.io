@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "Bias-Variance Trade off(편향-분산 트레이드오프/ 딜레마)란?"
 ---
 
