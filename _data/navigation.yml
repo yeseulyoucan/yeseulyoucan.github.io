@@ -6,7 +6,7 @@ main:
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
    - title: "일기,생각기록"
      url: /year-archive/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
+   - title: "머신러닝"
+     url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
