@@ -1,6 +1,7 @@
 ---
 layout: single
-title:  "Bias-Variance Trade off(편향-분산 트레이드오프/ 딜레마)란?"
+title:  "Bias-Variance Trade off(편향-분산 트레이드오프/ 딜레마)란?
+categories : /machine_learning/
 ---
 
 머신러닝을 공부하다보면 아래와 같은 그래프를 자주 보게 된다.  
