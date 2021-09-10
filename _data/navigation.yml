@@ -5,8 +5,8 @@ main:
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
    - title: "일기,생각기록"
-     url: /year-archive/
+     url: /year_archive/
    - title: "머신러닝"
-     url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
+     url: /machine_learning/
+   - title: "딥러닝"
+     url: /deep_learning/
